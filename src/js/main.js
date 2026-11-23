@@ -187,7 +187,7 @@ form.addEventListener("submit", (e) => {
   document.querySelector("#formStatus").textContent =
     "Opening WhatsApp. Please press Send in WhatsApp to contact the hotel.";
   window.open(
-    "https://wa.me/234815065491?text=" + encodeURIComponent(msg),
+    "https://wa.me/2348150654791?text=" + encodeURIComponent(msg),
     "_blank",
     "noopener,noreferrer",
   );
