@@ -945,3 +945,168 @@ select {
     height: 58px;
   }
 }
+
+/* Accessible light/dark theme switch */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 12px;
+  border: 1px solid #2577aa55;
+  background: transparent;
+  color: var(--indigo);
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+.theme-toggle svg {
+  width: 15px;
+  height: 15px;
+}
+.theme-toggle:hover {
+  background: #2577aa12;
+}
+html.dark-theme {
+  color-scheme: dark;
+  --ink: #edf3f6;
+  --muted: #b0bec7;
+  --primary-ink: #263044;
+}
+html.dark-theme body {
+  background: #101a22;
+  color: #edf3f6;
+}
+html.dark-theme .topbar {
+  background: #263747;
+  color: #fffbc4;
+}
+html.dark-theme .site-header {
+  background: #14232def;
+  border-bottom-color: #ffffff18;
+}
+html.dark-theme .brand {
+  color: #94c4e5;
+}
+html.dark-theme .main-nav {
+  color: #d7e1e7;
+}
+html.dark-theme .main-nav > a:hover {
+  color: #fffbc4;
+}
+html.dark-theme .theme-toggle {
+  color: #fffbc4;
+  border-color: #fffbc477;
+}
+html.dark-theme .theme-toggle:hover {
+  background: #fffbc41c;
+}
+html.dark-theme .pale {
+  background: #182630;
+}
+html.dark-theme .room-card,
+html.dark-theme .menu-item,
+html.dark-theme .booking-form {
+  background: #22333f;
+  color: #edf3f6;
+}
+html.dark-theme .room-info p,
+html.dark-theme .menu-item p,
+html.dark-theme .facility-card p,
+html.dark-theme .section-heading > p,
+html.dark-theme .intro-copy p:not(.eyebrow),
+html.dark-theme .contact-copy > p {
+  color: #b6c4cc;
+}
+html.dark-theme .intro-copy .lead {
+  color: #fffbc4;
+}
+html.dark-theme .intro-copy h2 em,
+html.dark-theme .section-heading h2 em,
+html.dark-theme .contact-copy h2 em {
+  color: #94c4e5;
+}
+html.dark-theme .stats-row,
+html.dark-theme .stats-row > div,
+html.dark-theme .facility-grid,
+html.dark-theme .facility-card {
+  border-color: #ffffff20;
+}
+html.dark-theme .stats-row span {
+  color: #b6c4cc;
+}
+html.dark-theme .dining-section,
+html.dark-theme .booking-section {
+  background: #fffbc4;
+  color: #263044;
+}
+html.dark-theme .dining-section p,
+html.dark-theme .booking-copy > p {
+  color: #5d5860;
+}
+html.dark-theme .menu-tabs button {
+  border-color: #52636e;
+  color: #42515a;
+}
+html.dark-theme .menu-tabs button.active,
+html.dark-theme .menu-tabs button:hover {
+  background: #3e3550;
+  color: #fffbc4;
+  border-color: #3e3550;
+}
+html.dark-theme .booking-form label {
+  color: #d1dde3;
+}
+html.dark-theme .booking-form input,
+html.dark-theme .booking-form select,
+html.dark-theme .booking-form textarea {
+  background: #172630;
+  color: #edf3f6;
+  border-color: #52636e;
+}
+html.dark-theme .booking-form h3 {
+  color: #fff;
+}
+html.dark-theme .booking-form > p {
+  color: #b6c4cc;
+}
+html.dark-theme .map-card {
+  background: #22333f;
+}
+html.dark-theme .map-placeholder {
+  background-color: #2c4351;
+  color: #d4eaf5;
+}
+html.dark-theme .contact-list a,
+html.dark-theme .contact-list p {
+  color: #e0e9ee;
+}
+html.dark-theme .lightbox button {
+  background: #22333f;
+  color: #fffbc4;
+}
+@media (max-width: 720px) {
+  html.dark-theme .main-nav {
+    background: #14232d;
+    box-shadow: 0 15px 25px #0005;
+  }
+  html.dark-theme .main-nav a {
+    border-bottom-color: #ffffff20;
+  }
+  .theme-toggle {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 12px 0;
+    border: 0;
+    border-bottom: 1px solid #edf1f3;
+    font-size: 12px;
+  }
+  html.dark-theme .theme-toggle {
+    border-bottom-color: #ffffff20;
+  }
+}

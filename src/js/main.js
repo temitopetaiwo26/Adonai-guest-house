@@ -21,6 +21,8 @@ import {
   BriefcaseBusiness,
   ChefHat,
   Send,
+  Sun,
+  Moon,
 } from "lucide";
 gsap.registerPlugin(ScrollTrigger);
 const iconSet = {
@@ -42,8 +44,31 @@ const iconSet = {
   BriefcaseBusiness,
   ChefHat,
   Send,
+  Sun,
+  Moon,
 };
 createIcons({ icons: iconSet });
+
+// Light/dark appearance switch. The visitor preference is remembered on this device.
+const themeToggle = document.querySelector("#themeToggle");
+const savedTheme = localStorage.getItem("adonai-theme");
+if (savedTheme === "dark") document.documentElement.classList.add("dark-theme");
+function updateThemeToggle() {
+  const isDark = document.documentElement.classList.contains("dark-theme");
+  themeToggle.setAttribute("aria-pressed", String(isDark));
+  themeToggle.setAttribute(
+    "aria-label",
+    isDark ? "Switch to bright mode" : "Switch to dark mode",
+  );
+  themeToggle.innerHTML = `<i data-lucide="${isDark ? "sun" : "moon"}"></i><span>${isDark ? "Bright mode" : "Dark mode"}</span>`;
+  createIcons({ icons: iconSet });
+}
+updateThemeToggle();
+themeToggle.addEventListener("click", () => {
+  const isDark = document.documentElement.classList.toggle("dark-theme");
+  localStorage.setItem("adonai-theme", isDark ? "dark" : "bright");
+  updateThemeToggle();
+});
 const toggle = document.querySelector("#menuToggle"),
   nav = document.querySelector("#mainNav");
 toggle.addEventListener("click", () => {
